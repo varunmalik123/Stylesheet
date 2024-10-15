@@ -122,7 +122,7 @@ div.container {
 .Skin label.SingleAnswer:hover,
 .Skin label.MultipleAnswer:hover {
   background-color: #E3ECFD;
-  transform: translateX(5px);
+  transform: translateY(5px);
 }
 
 .Skin label.SingleAnswer.q-checked,
