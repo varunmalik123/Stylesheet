@@ -1,222 +1,178 @@
-/* Color Variables */
-:root {
-  --color-dark: #1C0A41;
-  --color-primary: #5C83F8;
-  --color-secondary: #7B52F3;
-  --color-tertiary: #FA773E;
-  --color-light: #E3ECFD;
-  --color-white: #FFFFFF;
-}
-
-/* Global styles */
-.Skin {
-  font-family: 'Inter', 'Roboto', sans-serif;
-  color: var(--color-dark);
-  background-color: var(--color-light);
+/* Global stiiiyles */
+body {
+  font-family: 'Cabin', Arial, sans-serif;
+  background-color: #F5F5F5;
+  color: #1C0A41;
   line-height: 1.6;
 }
 
-.Skin .SkinInner {
+.Skin {
+  background-color: #FFFFFF;
   max-width: 800px;
   margin: 0 auto;
-  background-color: var(--color-white);
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(28, 10, 65, 0.1);
-  padding: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 /* Typography */
-.Skin .QuestionText {
-  font-size: 18px;
+h1, h2, h3, h4, h5, h6 {
+  color: #1C0A41;
+}
+
+.QuestionText {
+  font-size: 20px;
   font-weight: 600;
-  color: var(--color-dark);
-  margin-bottom: 20px;
+  color: #1C0A41;
+  margin-bottom: 15px;
 }
 
-.Skin .QuestionBody {
-  font-size: 16px;
-  color: var(--color-dark);
-}
-
-/* Logo styles */
+/* Logo */
 #LogoContainer {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
-#LogoContainer img {
+#Logo img {
   max-width: 180px;
   height: auto;
 }
 
-/* Progress Bar */
-#ProgressBar {
-  background-color: var(--color-light);
-  height: 8px;
-  border-radius: 4px;
-  margin-bottom: 30px;
+/* Calendar styles */
+.calendar-container {
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 
-#ProgressBar .BarContainer {
-  background-color: var(--color-primary);
-  height: 100%;
-  border-radius: 4px;
-  transition: width 0.3s ease;
+.calendar, .calendar-content {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  width: 100%;
+}
+
+.day, .day-content {
+  border: 2px solid #1C0A41;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.day {
+  background-color: #5C83F8;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.day-content {
+  background-color: #FFFFFF;
+  color: #FA773E;
+  font-size: 16px;
+  font-weight: 700;
+  border-top: none;
 }
 
 /* Question styles */
-.Skin .QuestionOuter {
-  background-color: var(--color-white);
-  border-radius: 10px;
+.QuestionOuter {
+  background-color: #FFFFFF;
+  border-radius: 8px;
   padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 4px rgba(28, 10, 65, 0.05);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 /* Answer choice styles */
 .Skin label.SingleAnswer,
 .Skin label.MultipleAnswer {
-  background-color: var(--color-light);
-  border: 1px solid var(--color-primary);
+  background-color: #F8F9FA;
+  border: 2px solid #5C83F8;
   border-radius: 8px;
   padding: 12px 15px;
   margin-bottom: 10px;
   transition: all 0.3s ease;
+  color: #1C0A41;
 }
 
 .Skin label.SingleAnswer:hover,
 .Skin label.MultipleAnswer:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: #E3ECFD;
   transform: translateX(5px);
 }
 
 .Skin label.SingleAnswer.q-checked,
 .Skin label.MultipleAnswer.q-checked {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
-  color: var(--color-white);
+  background-color: #5C83F8;
+  border-color: #5C83F8;
+  color: #FFFFFF;
 }
 
 /* Button styles */
 #Buttons {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
+  margin-top: 20px;
 }
 
-#Buttons #PreviousButton,
-#Buttons #NextButton {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+#PreviousButton, #NextButton {
+  background-color: #5C83F8;
+  color: #FFFFFF;
   border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-#Buttons #PreviousButton {
-  margin-right: auto;
-}
-
-#Buttons #NextButton {
-  margin-left: auto;
-}
-
-#Buttons #PreviousButton:hover,
-#Buttons #NextButton:hover {
-  background-color: var(--color-secondary);
+#PreviousButton:hover, #NextButton:hover {
+  background-color: #7B52F3;
   transform: translateY(-2px);
-}
-
-#Buttons #PreviousButton:focus,
-#Buttons #NextButton:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(92, 131, 248, 0.5);
-}
-
-/* Calendar styles (if applicable) */
-.calendar-container {
-  border: 1px solid var(--color-light);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-
-.calendar-row {
-  display: flex;
-  border-bottom: 1px solid var(--color-light);
-}
-
-.calendar-cell {
-  flex: 1;
-  padding: 12px;
-  text-align: center;
-  border-right: 1px solid var(--color-light);
-}
-
-.calendar-cell:last-child {
-  border-right: none;
-}
-
-.calendar-header {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-weight: 600;
 }
 
 /* Responsive design */
 @media (max-width: 600px) {
-  .Skin .SkinInner {
-      padding: 20px;
+  .Skin {
+      padding: 15px;
   }
 
-  .Skin .QuestionText {
-      font-size: 16px;
+  .QuestionText {
+      font-size: 18px;
   }
 
-  #Buttons #PreviousButton,
-  #Buttons #NextButton {
-      width: 40px;
-      height: 40px;
-      font-size: 20px;
+  .day, .day-content {
+      height: 50px;
+      font-size: 12px;
+  }
+
+  #PreviousButton, #NextButton {
+      padding: 10px 20px;
+      font-size: 14px;
   }
 }
 
-/* Accessibility */
-.Skin .QuestionText,
-.Skin .QuestionBody {
-  color: var(--color-dark);
+/* Additional styles */
+.week-container {
+  text-align: center;
+  font-size: 16px;
+  border: 2px solid #1C0A41;
+  color: #FA773E;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
 }
 
-#Buttons #PreviousButton,
-#Buttons #NextButton {
-  color: var(--color-white);
+.ValidationError {
+  color: #FA773E;
+  margin-top: 5px;
+  font-size: 14px;
 }
 
-.Skin label.SingleAnswer,
-.Skin label.MultipleAnswer {
-  color: var(--color-dark);
-}
-
-/* Subtle animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.Skin .QuestionOuter {
-  animation: fadeIn 0.5s ease-out;
-}
-
-/* Gradient background (optional) */
-.Skin {
-  background: linear-gradient(135deg, var(--color-light), var(--color-white));
+/* Hide Qualtrics default footer */
+#Plug, .RecaptchaV3Notice {
+  display: none !important;
 }
