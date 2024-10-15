@@ -84,7 +84,7 @@ body, .Skin {
   display: block;
   width: 100%;
   padding: 15px 20px;
-  background-color: #FFFFFF;
+  background-color: #F5F3F0;
   border: 1px solid #5C83F8;
   border-radius: 8px;
   font-size: 16px;
@@ -113,7 +113,7 @@ body, .Skin {
 .Skin label.SingleAnswer:hover,
 .Skin label.MultipleAnswer:hover {
   background-color: #E3ECFD;
-  transform: translateX(5px);
+  transform: translateY(5px);
 }
 
 .Skin label.SingleAnswer.q-checked,
