@@ -98,6 +98,10 @@ body, .Skin {
   text-align: center;
 }
 
+.Skin .MAVR label.MultipleAnswer,
+.Skin .SAVR label.SingleAnswer {
+  text-align: center !important;
+}
 
 .Skin label.SingleAnswer:hover,
 .Skin label.MultipleAnswer:hover {
