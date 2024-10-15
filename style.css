@@ -1,33 +1,235 @@
-/* Global stiiiyles */
-body {
-  font-family: 'Cabin', Arial, sans-serif;
-  background-color: #F5F5F5;
-  color: #1C0A41;
-  line-height: 1.6;
+/* New updated styles. */
+
+/* Page styles */
+
+#Plug {
+  /* Hide plug */
+  visibility: hidden;
 }
 
 .Skin {
+  color: #1C0A41;
+  /* Use same font stack, but prioritize Cabin */
+  font-family: 'Cabin', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #F5F5F5;
+}
+
+.Skin .SkinInner {
+  /* Use same max width as our modals */
+  width: 100%;
+  min-width: auto;
+  max-width: 500px;
   background-color: #FFFFFF;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(28, 10, 65, 0.1);
+  margin: 20px auto;
+  padding: 20px;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
+.Skin #Questions {
+  /* Prevent questions scrolling under fixed buttons */
+  margin-bottom: 88px;
+}
+
+.Skin #PushStickyFooter {
+  /* Unecessary element at bottom of page, adding extra scroll height */
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .Skin #Questions {
+    /* Revert margin when buttons no longer fixed */
+    margin-bottom: 0;
+  }
+}
+
+.Skin .ValidationError {
+  text-align: center;
+  padding: 0 16px 16px 16px;
+  color: #FA773E;
+}
+
+.Skin .QuestionText {
   color: #1C0A41;
-}
-
-.QuestionText {
   font-size: 20px;
-  font-weight: 600;
-  color: #1C0A41;
-  margin-bottom: 15px;
+  line-height: 28px;
+  font-weight: 700;
+  padding: 0 24px 16px 24px;
+  text-align: center;
 }
 
-/* Logo */
+.Skin .QuestionBody {
+  color: #1C0A41;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  padding: 0 16px 40px 16px;
+}
+
+.Skin .QuestionOuter.Highlight .Inner {
+  /* Avoid tinted background color on validation */
+  background: none;
+}
+
+.Skin #Buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 16px;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 0;
+  box-shadow: 0 -2px 10px rgba(28, 10, 65, 0.1);
+}
+
+@media (min-width: 500px) {
+  .Skin #Buttons {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+.Skin #Buttons #NextButton,
+.Skin #Buttons #PreviousButton {
+  color: #FFFFFF;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  width: 100%;
+  max-width: 343px;
+  background-color: #5C83F8;
+  height: 56px;
+  padding: 0 16px 0 16px;
+  border-radius: 28px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.Skin #Buttons #NextButton:focus,
+.Skin #Buttons #PreviousButton:focus {
+  background-color: #5C83F8;
+  box-shadow: none;
+  outline: none;
+}
+
+.Skin #Buttons #NextButton:focus-visible,
+.Skin #Buttons #PreviousButton:focus-visible {
+  box-shadow: inset 0px 0px 0px 2px #1C0A41;
+}
+
+.Skin #Buttons #NextButton:active,
+.Skin #Buttons #PreviousButton:active {
+  background-color: #7B52F3;
+  transform: translateY(2px);
+}
+
+.Skin #Buttons #NextButton:disabled,
+.Skin #Buttons #PreviousButton:disabled {
+  opacity: 0.7;
+  color: #FFFFFF;
+  background-color: #CCD6DD;
+}
+
+.Skin #Buttons .Button + #NextButton {
+  margin-left: 16px;
+}
+
+/* End of survey */
+
+.Skin #EndOfSurvey {
+  color: #1C0A41;
+  text-align: center;
+  background: url(https://res.cloudinary.com/sharecare/image/upload/v1662554731/sharecare-images/qualtrics/heart-on-stars.png)
+    center top/269px 144px no-repeat;
+  padding: 164px 16px 16px 16px;
+  margin-top: 64px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+/* Question specific styles */
+
+/* Single/multi select */
+.Skin label.MultipleAnswer,
+.Skin label.SingleAnswer {
+  background-color: #F8F9FA;
+  border: 2px solid #5C83F8;
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  color: #1C0A41;
+}
+
+.Skin label.MultipleAnswer:hover,
+.Skin label.SingleAnswer:hover {
+  background-color: #E3ECFD;
+  transform: translateX(5px);
+}
+
+.Skin label.MultipleAnswer.q-checked,
+.Skin label.SingleAnswer.q-checked {
+  background-color: #5C83F8;
+  border-color: #5C83F8;
+  color: #FFFFFF;
+}
+
+.Skin
+  input[type="radio"]:focus-visible
+  ~ .LabelWrapper
+  > label.MultipleAnswer.q-focused.q-checked,
+.Skin
+  input[type="radio"]:focus-visible
+  ~ .LabelWrapper
+  > label.SingleAnswer.q-focused.q-checked {
+  box-shadow: inset 0px 0px 0px 2px #1C0A41;
+}
+
+/* NPS */
+.Skin .NPS table label.SingleAnswer {
+  border: 2px solid #5C83F8;
+  color: #5C83F8;
+  background: transparent;
+  width: 38px;
+  display: flex;
+  height: 38px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+.Skin .NPS table label.SingleAnswer.q-checked {
+  background: #5C83F8;
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+.Skin
+  .NPS
+  table:has(input:focus-visible)
+  label.SingleAnswer.q-checked.q-focused {
+  border-color: #1C0A41;
+}
+
+/* Row containing NPS options  */
+.Skin .NPS table tr:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+/* Option cells */
+.Skin .NPS table tr td {
+  display: block;
+  width: auto;
+}
+
+/* Logo styles */
 #LogoContainer {
   text-align: center;
   margin-bottom: 30px;
@@ -38,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
 }
 
-/* Calendar styles */
+/* Calendar styles (if applicable) */
 .calendar-container {
   margin-top: 25px;
   margin-bottom: 20px;
@@ -76,85 +278,6 @@ h1, h2, h3, h4, h5, h6 {
   border-top: none;
 }
 
-/* Question styles */
-.QuestionOuter {
-  background-color: #FFFFFF;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* Answer choice styles */
-.Skin label.SingleAnswer,
-.Skin label.MultipleAnswer {
-  background-color: #F8F9FA;
-  border: 2px solid #5C83F8;
-  border-radius: 8px;
-  padding: 12px 15px;
-  margin-bottom: 10px;
-  transition: all 0.3s ease;
-  color: #1C0A41;
-}
-
-.Skin label.SingleAnswer:hover,
-.Skin label.MultipleAnswer:hover {
-  background-color: #E3ECFD;
-  transform: translateX(5px);
-}
-
-.Skin label.SingleAnswer.q-checked,
-.Skin label.MultipleAnswer.q-checked {
-  background-color: #5C83F8;
-  border-color: #5C83F8;
-  color: #FFFFFF;
-}
-
-/* Button styles */
-#Buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-#PreviousButton, #NextButton {
-  background-color: #5C83F8;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 25px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#PreviousButton:hover, #NextButton:hover {
-  background-color: #7B52F3;
-  transform: translateY(-2px);
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-  .Skin {
-      padding: 15px;
-  }
-
-  .QuestionText {
-      font-size: 18px;
-  }
-
-  .day, .day-content {
-      height: 50px;
-      font-size: 12px;
-  }
-
-  #PreviousButton, #NextButton {
-      padding: 10px 20px;
-      font-size: 14px;
-  }
-}
-
 /* Additional styles */
 .week-container {
   text-align: center;
@@ -164,15 +287,4 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px;
   margin-top: 15px;
   border-radius: 5px;
-}
-
-.ValidationError {
-  color: #FA773E;
-  margin-top: 5px;
-  font-size: 14px;
-}
-
-/* Hide Qualtrics default footer */
-#Plug, .RecaptchaV3Notice {
-  display: none !important;
 }
