@@ -10,7 +10,7 @@ body, .Skin {
 }
 
 .Skin .SkinInner {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 40px 20px;
 }
@@ -18,6 +18,12 @@ body, .Skin {
 /* Question styles */
 .Skin #Questions {
   margin-bottom: 88px;
+}
+
+.Skin .QuestionOuter {
+  width: 100%;
+  max-width: 1300px !important;
+  margin: 0 auto;
 }
 
 .Skin .QuestionText {
@@ -56,7 +62,7 @@ body, .Skin {
 /* Answer choice styles */
 .Skin .ChoiceStructure {
   width: 100%;
-  max-width: 400px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
