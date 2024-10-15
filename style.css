@@ -1,147 +1,119 @@
+/* Global styles */
 .Skin {
+  font-family: 'Arial', sans-serif;
   color: #333;
-  font-family: 'Nunito', sans-serif;
   background-color: #f0f7ff;
-  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239ec5ff' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  line-height: 1.6;
 }
 
 .Skin .SkinInner {
-  width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Logo styles */
+#LogoContainer {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#LogoContainer img {
+  max-width: 200px;
+  height: auto;
 }
 
 /* Question styles */
 .Skin .QuestionText {
+  font-size: 18px;
+  font-weight: bold;
   color: #2c3e50;
-  font-size: 22px;
-  line-height: 1.4;
-  font-weight: 700;
-  padding: 24px 32px;
-  text-align: center;
-  background-color: #ecf0f1;
-  border-bottom: 3px solid #3498db;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
 }
 
-.Skin .QuestionBody {
-  color: #34495e;
-  font-size: 18px;
-  line-height: 1.6;
-  padding: 24px 32px;
-}
-
-/* Button styles */
-.Skin #Buttons {
-  display: flex;
-  justify-content: space-between;
-  padding: 24px 32px;
-  background-color: #ecf0f1;
-}
-
-.Skin #Buttons #NextButton,
-.Skin #Buttons #PreviousButton {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 600;
-  background-color: #3498db;
-  border: none;
-  border-radius: 30px;
-  padding: 12px 24px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.Skin #Buttons #NextButton:hover,
-.Skin #Buttons #PreviousButton:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.Skin #Buttons #NextButton:focus,
-.Skin #Buttons #PreviousButton:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
-}
-
-/* Answer styles */
-.Skin label.MultipleAnswer,
+/* Answer choice styles */
 .Skin label.SingleAnswer {
   background-color: #f8f9fa;
-  border: 2px solid #e9ecef;
-  border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
   transition: all 0.3s ease;
 }
 
-.Skin label.MultipleAnswer:hover,
 .Skin label.SingleAnswer:hover {
   background-color: #e9ecef;
   transform: translateX(5px);
 }
 
-.Skin label.MultipleAnswer.q-checked,
 .Skin label.SingleAnswer.q-checked {
   background-color: #d4edda;
   border-color: #28a745;
 }
 
-/* NPS styles */
-.Skin .NPS table label.SingleAnswer {
-  border: 2px solid #3498db;
-  color: #3498db;
-  background: #ffffff;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 4px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.Skin .NPS table label.SingleAnswer:hover {
-  transform: scale(1.1);
-}
-
-.Skin .NPS table label.SingleAnswer.q-checked {
-  background: #3498db;
-  color: #ffffff;
-}
-
-/* Progress bar */
-#ProgressBar {
-  height: 8px;
-  background-color: #e9ecef;
-}
-
-#ProgressBar .BarContainer {
+/* Button styles */
+#Buttons #PreviousButton, #Buttons #NextButton {
   background-color: #3498db;
-  height: 100%;
-  transition: width 0.5s ease;
-}
-
-/* End of survey */
-.Skin #EndOfSurvey {
-  text-align: center;
-  padding: 48px 32px;
-  background: linear-gradient(135deg, #3498db, #2ecc71);
   color: #ffffff;
-  font-size: 28px;
-  line-height: 1.4;
-  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.Skin #EndOfSurvey::after {
-  content: '🎉';
-  display: block;
-  font-size: 48px;
-  margin-top: 24px;
+#Buttons #PreviousButton:hover, #Buttons #NextButton:hover {
+  background-color: #2980b9;
+}
+
+/* Calendar styles */
+.calendar-container {
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.calendar-row {
+  display: flex;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.calendar-cell {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border-right: 1px solid #e9ecef;
+}
+
+.calendar-cell:last-child {
+  border-right: none;
+}
+
+.calendar-header {
+  background-color: #3498db;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .Skin .SkinInner {
+      padding: 10px;
+  }
+
+  .Skin .QuestionText {
+      font-size: 16px;
+  }
+
+  #Buttons #PreviousButton, #Buttons #NextButton {
+      padding: 8px 15px;
+      font-size: 14px;
+  }
 }
