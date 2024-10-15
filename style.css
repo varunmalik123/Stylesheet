@@ -40,6 +40,15 @@ body, .Skin {
   align-items: center;
 }
 
+.Skin .QuestionBody input[type="text"],
+.Skin .QuestionBody input[type="password"],
+.Skin .QuestionBody input[type="email"],
+.Skin .QuestionBody input[type="number"],
+.Skin .QuestionBody textarea,
+.Skin .QuestionBody select {
+  text-align: center;
+}
+
 .Skin .QuestionOuter.Highlight .Inner {
   background: none;
 }
@@ -48,11 +57,19 @@ body, .Skin {
 .Skin .ChoiceStructure {
   width: 100%;
   max-width: 400px;
+  margin: 0 auto;
 }
 
 .Skin .ChoiceStructure .Selection {
   margin-bottom: 10px;
   width: 100%;
+}
+
+.Skin input[type="radio"] + label,
+.Skin input[type="checkbox"] + label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Skin label.SingleAnswer,
@@ -69,6 +86,18 @@ body, .Skin {
   transition: all 0.3s ease;
   color: #1C0A41;
 }
+
+.Skin input[type="text"],
+.Skin input[type="password"],
+.Skin input[type="email"],
+.Skin input[type="number"],
+.Skin textarea,
+.Skin select,
+.Skin label.SingleAnswer,
+.Skin label.MultipleAnswer {
+  text-align: center;
+}
+
 
 .Skin label.SingleAnswer:hover,
 .Skin label.MultipleAnswer:hover {
