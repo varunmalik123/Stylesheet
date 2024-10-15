@@ -1,4 +1,4 @@
-/* Radicle Journey Survey Styles - v8 */
+/* Radicle Journey Survey Styles - v9 */
 /* Global styles */
 body, .Skin {
   background-color: #F5F3F0;
@@ -258,6 +258,25 @@ input[type="radio"]:focus-visible
   .Skin #Questions {
     margin-bottom: 0;
   }
+}
+
+/* Progress bar styles */
+#ProgressBar {
+  /* Existing styles remain unchanged */
+}
+
+#ProgressBarContainer {
+  position: relative;
+}
+
+#ProgressBarContainer::before {
+  content: 'v9';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 12px;
+  color: #666666;
+  font-weight: bold;
 }
 
 /* Additional styles (if needed) */
