@@ -1,10 +1,9 @@
-/* Radicle Journey Survey Styles - v10 */
+/* Radicle Journey Survey Styles */
 
 /* Global styles */
 body, .Skin {
   color: #1C0A41;
   font-family: 'Cabin', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  min-height: 100vh;
 }
 
 .Skin .SkinInner {
@@ -13,8 +12,10 @@ body, .Skin {
   padding: 40px 20px;
 }
 
-/* Container styles */
-div.container {
+/* Background color for specified elements */
+.Skin .QuestionOuter,
+.Skin #SkinContent {
+  background-color: #F5F3F0;
 }
 
 /* Question styles */
@@ -26,7 +27,6 @@ div.container {
   width: 100%;
   max-width: 1300px !important;
   margin: 0 auto;
-  background-color: #F5F3F0;
 }
 
 .Skin .QuestionText {
