@@ -1,181 +1,147 @@
-/* For use with "Classic" layout. */
-
-/* Page styles */
-
-#Plug {
-  /* Hide plug */
-  visibility: hidden;
-}
 .Skin {
-  color: #14181a;
-  /* Use same font stack */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
+  color: #333;
+  font-family: 'Nunito', sans-serif;
+  background-color: #f0f7ff;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239ec5ff' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
+
 .Skin .SkinInner {
-  /* Use same max width as our modals */
   width: 100%;
-  min-width: auto;
-  max-width: 500px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
-.Skin #Questions {
-  /* Prevent questions scrolling under fixed buttons */
-  margin-bottom: 88px;
-}
-.Skin #PushStickyFooter {
-  /* Unecessary element at bottom of page, adding extra scroll height */
-  display: none;
-}
-@media (min-width: 500px) {
-  .Skin #Questions {
-    /* Revert margin when buttons no longer fixed */
-    margin-bottom: 0;
-  }
-}
-.Skin .ValidationError {
-  text-align: center;
-  padding: 0 16px 16px 16px;
-}
+
+/* Question styles */
 .Skin .QuestionText {
-  color: #14181a;
-  font-size: 18px;
-  line-height: 24px;
+  color: #2c3e50;
+  font-size: 22px;
+  line-height: 1.4;
   font-weight: 700;
-  padding: 0 24px 16px 24px;
+  padding: 24px 32px;
   text-align: center;
+  background-color: #ecf0f1;
+  border-bottom: 3px solid #3498db;
 }
+
 .Skin .QuestionBody {
-  color: #14181a;
+  color: #34495e;
   font-size: 18px;
-  line-height: 24px;
-  font-weight: 400;
-  padding: 0 16px 40px 16px;
+  line-height: 1.6;
+  padding: 24px 32px;
 }
-.Skin .QuestionOuter.Highlight .Inner {
-  /* Avoid tinted background color on validation */
-  background: none;
-}
+
+/* Button styles */
 .Skin #Buttons {
   display: flex;
-  flex-wrap: nowrap;
-  padding: 16px;
-  background-color: #ffffff;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  margin-top: 0;
+  justify-content: space-between;
+  padding: 24px 32px;
+  background-color: #ecf0f1;
 }
-@media (min-width: 500px) {
-  .Skin #Buttons {
-    position: static;
-  }
-}
+
 .Skin #Buttons #NextButton,
 .Skin #Buttons #PreviousButton {
   color: #ffffff;
   font-size: 18px;
-  line-height: 24px;
-  font-weight: 400;
-  width: 100%;
-  max-width: 343px;
-  background-color: #2779a9;
-  height: 56px;
-  padding: 0 16px 0 16px;
-  border-radius: 8px;
+  font-weight: 600;
+  background-color: #3498db;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+.Skin #Buttons #NextButton:hover,
+.Skin #Buttons #PreviousButton:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .Skin #Buttons #NextButton:focus,
 .Skin #Buttons #PreviousButton:focus {
-  background-color: #2779a9;
-  box-shadow: none;
   outline: none;
-}
-.Skin #Buttons #NextButton:focus-visible,
-.Skin #Buttons #PreviousButton:focus-visible {
-  box-shadow: inset 0px 0px 0px 2px #ccd6dd;
-}
-.Skin #Buttons #NextButton:active,
-.Skin #Buttons #PreviousButton:active {
-  background-color: #2779a9;
-  color: #ffffff;
-}
-.Skin #Buttons #NextButton:disabled,
-.Skin #Buttons #PreviousButton:disabled {
-  opacity: 1;
-  color: #5d6a74;
-  background-color: #ccd6dd;
-}
-.Skin #Buttons .Button + #NextButton {
-  margin-left: 16px;
-}
-/* End of survey */
-
-.Skin #EndOfSurvey {
-  color: #14181a;
-  text-align: center;
-  background: url(https://res.cloudinary.com/sharecare/image/upload/e_replace_color:0099CC:20:00bfa5/v1662554731/sharecare-images/qualtrics/heart-on-stars.png)
-    center top/269px 144px no-repeat;
-  padding: 164px 16px 16px 16px;
-  margin-top: 64px;
-  font-size: 24px;
-  line-height: 30px;
-  font-weight: 500;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
 }
 
-/* Question specific styles */
+/* Answer styles */
+.Skin label.MultipleAnswer,
+.Skin label.SingleAnswer {
+  background-color: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
 
-/* Single/multi select */
-.Skin label.MultipleAnswer.q-focused.q-checked,
-.Skin label.SingleAnswer.q-focused.q-checked {
-  outline: none;
-  background: #2779a9;
-  box-shadow: none;
+.Skin label.MultipleAnswer:hover,
+.Skin label.SingleAnswer:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
 }
-.Skin
-  input[type="radio"]:focus-visible
-  ~ .LabelWrapper
-  > label.MultipleAnswer.q-focused.q-checked,
-.Skin
-  input[type="radio"]:focus-visible
-  ~ .LabelWrapper
-  > label.SingleAnswer.q-focused.q-checked {
-  box-shadow: inset 0px 0px 0px 2px #fff;
+
+.Skin label.MultipleAnswer.q-checked,
+.Skin label.SingleAnswer.q-checked {
+  background-color: #d4edda;
+  border-color: #28a745;
 }
-/* NPS */
+
+/* NPS styles */
 .Skin .NPS table label.SingleAnswer {
-  border: 2px solid #5d6a74;
-  color: #5d6a74;
-  background: transparent;
-  width: 38px;
-  display: flex;
-  height: 38px;
+  border: 2px solid #3498db;
+  color: #3498db;
+  background: #ffffff;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
+
+.Skin .NPS table label.SingleAnswer:hover {
+  transform: scale(1.1);
+}
+
 .Skin .NPS table label.SingleAnswer.q-checked {
-  background: #2779a9;
-  border-color: transparent;
+  background: #3498db;
   color: #ffffff;
 }
-/* To add keyboard focus (with focus-visible) we need crazy selector because input isn't close to label */
-/* Support is new, not tested */
-.Skin
-  .NPS
-  table:has(input:focus-visible)
-  label.SingleAnswer.q-checked.q-focused {
-  border-color: #ffffff;
+
+/* Progress bar */
+#ProgressBar {
+  height: 8px;
+  background-color: #e9ecef;
 }
-/* Row containing NPS options  */
-.Skin .NPS table tr:nth-child(2) {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-right: -10px;
-  margin-left: -10px;
+
+#ProgressBar .BarContainer {
+  background-color: #3498db;
+  height: 100%;
+  transition: width 0.5s ease;
 }
-/* Option cells */
-.Skin .NPS table tr td {
+
+/* End of survey */
+.Skin #EndOfSurvey {
+  text-align: center;
+  padding: 48px 32px;
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.Skin #EndOfSurvey::after {
+  content: '🎉';
   display: block;
-  width: auto;
+  font-size: 48px;
+  margin-top: 24px;
 }
